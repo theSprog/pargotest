@@ -1,0 +1,28 @@
+---
+Checks: >
+  bugprone-*,
+  clang-analyzer-*,
+  modernize-*,
+  performance-*,
+  readability-*,
+  portability-*,
+  misc-*,
+  -readability-magic-numbers,  # 关闭“魔数检测”避免过度告警
+  -modernize-use-trailing-return-type  # 某些风格下可关闭
+
+WarningsAsErrors: >
+  clang-analyzer-*,
+  bugprone-*,
+  performance-*
+
+HeaderFilterRegex: 'src/|include/'
+
+FormatStyle: file
+
+CheckOptions:
+  - key:             modernize-loop-convert.MaxCopySize
+    value:           '16'  # 避免大对象的隐式拷贝
+  - key:             modernize-use-nullptr.NullMacros
+    value:           'NULL'  # 定义哪些宏视作 NULL
+  - key:             readability-identifier-naming.VariableCase
+    value:           lower_case  # 示例：变量小写命名（可按实际项目风格调整）

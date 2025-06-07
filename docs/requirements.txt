@@ -1,0 +1,36 @@
+# Core Sphinx and theme
+sphinx>=5.0.0
+sphinx-rtd-theme>=1.2.0
+
+# Breathe for Doxygen integration
+breathe>=4.34.0
+
+# MyST Parser for Markdown support
+myst-parser>=0.18.0
+
+# Additional Sphinx extensions
+sphinx-copybutton>=0.5.0
+sphinx-tabs>=3.4.0
+sphinx-design>=0.3.0
+sphinxcontrib-mermaid>=0.7.0
+
+# Development and utilities
+sphinx-autobuild>=2021.3.14
+doc8>=0.11.0
+rstcheck>=6.0.0
+
+# Optional: Enhanced documentation features
+sphinx-external-toc>=0.3.0
+sphinx-togglebutton>=0.3.0
+sphinx-inline-tabs>=2022.1.2b11
+
+# Optional: API documentation enhancements
+sphinx-autodoc-typehints>=1.19.0
+sphinx-paramlinks>=0.5.0
+
+# Optional: Jupyter notebook support
+nbsphinx>=0.8.0
+jupyter>=1.0.0
+
+# Optional: PlantUML support
+sphinxcontrib-plantuml>=0.24

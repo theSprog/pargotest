@@ -1,0 +1,79 @@
+[package]
+name = "two"
+version = "0.0.1"
+std = 17
+compiler = "g++"
+authors = []
+description = ""
+license = "GPL"
+keywords = []
+
+[[bin]]
+name = "two"
+static = false
+pie = true
+
+[dependencies]
+fmt = "10.2.1"
+spdlog = "1.12.0"
+
+[sanitize]
+ubsan = true
+asan = true
+leak = true
+tsan = false    # `tsan` incompatible with `asan`
+msan = false   # clang++ only, `msan` incompatible with `asan,leak,tsan`
+
+[profile.Debug]
+compile_command_json = true
+cxxflags = [
+  "-Og",                      # Optimize for debugging experience
+  "-fno-inline",              # Disable inlining (better backtrace)
+  "-fstack-protector-strong", # Enable strong stack protection
+  "-fno-omit-frame-pointer",  # Preserve frame pointer (better for stack tracing)
+  "-g3",                      # Maximum debug info level
+  "-fmax-errors=1",           # Stop after first error
+
+  # Warning-related flags
+  "-Wall",
+  "-Wextra",
+  "-Weffc++",
+  "-Werror",
+
+  "-Werror=uninitialized",
+  "-Werror=return-type",
+  "-Wconversion",
+  "-Wsign-compare",
+  "-Werror=unused-result",
+  "-Werror=suggest-override",
+  "-Wzero-as-null-pointer-constant",
+  "-Wmissing-declarations",
+  "-Wold-style-cast",
+  "-Werror=vla",
+  "-Wnon-virtual-dtor",
+
+  "-Wno-unused-parameter",
+  "-Wno-unused-function",
+  "-Wno-unused-command-line-argument",
+]
+definitions = [
+  "DEBUG",                   # Define macro DEBUG
+  "_GLIBCXX_DEBUG",          # Enable libstdc++ debug mode
+  "_GLIBCXX_DEBUG_PEDANTIC", # Enable stricter STL debug checks
+]
+
+[profile.Release]
+cxxflags = [
+    "-O3",  # -O3 is cmake default 
+    "-march=native",
+]
+definitions = ["NDEBUG"]
+lto = true
+rpath = true
+
+# increment compile if tracked file modified
+[tracked]
+files = ["CMakeLists.txt", "conanfile.py", "Pargo.toml"]
+dirs = ["include", "src", "cmake", "conan_config"]
+exclude_files = ["cmake/Deps.cmake"]
+exclude_dirs = ["cmake/build"]

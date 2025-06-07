@@ -1,0 +1,16 @@
+# docs/requirements-rtd.txt - Minimal dependencies for Read the Docs
+
+# Core requirements for RTD build
+sphinx>=5.0.0,<7.0.0
+sphinx-rtd-theme>=1.2.0,<2.0.0
+breathe>=4.34.0,<5.0.0
+myst-parser>=0.18.0,<1.0.0
+
+# Essential extensions only
+sphinx-copybutton>=0.5.0,<1.0.0
+sphinxcontrib-mermaid>=0.7.0,<1.0.0
+
+# Pin versions for reproducible builds
+docutils>=0.17.0,<0.20.0
+Jinja2>=3.0.0,<4.0.0
+MarkupSafe>=2.0.0,<3.0.0

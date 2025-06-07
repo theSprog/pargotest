@@ -1,0 +1,76 @@
+IndentWidth: 4
+ColumnLimit: 120
+
+AlignConsecutiveMacros: 
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+
+AlignArrayOfStructures: Right 
+
+AlwaysBreakTemplateDeclarations: Yes
+
+AlignEscapedNewlines: Left
+
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 0
+
+AllowShortBlocksOnASingleLine: false 
+AllowShortEnumsOnASingleLine: false
+
+AllowAllArgumentsOnNextLine: false
+
+AllowShortFunctionsOnASingleLine: Empty
+
+AllowShortIfStatementsOnASingleLine: WithoutElse
+
+AllowShortLoopsOnASingleLine: true
+
+BinPackArguments: false
+BinPackParameters: false
+
+BitFieldColonSpacing: Both
+
+BreakBeforeInlineASMColon: Always
+
+BreakBeforeTernaryOperators: false
+
+BreakStringLiterals: false
+
+FixNamespaceComments: true
+
+SortIncludes: false
+
+IndentPPDirectives: BeforeHash
+
+InsertNewlineAtEOF: true
+
+KeepEmptyLinesAtEOF: true
+
+MaxEmptyLinesToKeep: 2
+
+PPIndentWidth: 0
+
+PointerAlignment: Left
+ReferenceAlignment: Left
+
+ReflowComments: false
+
+RemoveSemicolon: true
+
+SeparateDefinitionBlocks: Always
+
+SortUsingDeclarations: LexicographicNumeric
+
+SpaceAfterLogicalNot: true
+
+SpaceBeforeJsonColon: true
+
+SpaceBeforeParens: ControlStatements
+
+IndentCaseLabels: true
+
+InsertTrailingCommas: Wrapped
+
+
